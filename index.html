@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reethu S - Developer Portfolio</title>
-
-  <!-- local CSS: exact lowercase filename required on case-sensitive hosts -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
@@ -30,7 +24,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <span class="logo-text">Reethu</span>
+        <span class="logo-text">Reethu s</span>
       </div>
       <ul class="nav-menu">
         <li><a href="#home" class="nav-link">Home</a></li>
@@ -47,7 +41,7 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-container">
       <div class="hero-content">
@@ -62,10 +56,12 @@
           </p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">
-              <i class="fas fa-code"></i> View My Work
+              <i class="fas fa-code"></i>
+              View My Work
             </a>
             <a href="#contact" class="btn btn-secondary">
-              <i class="fas fa-envelope"></i> Get In Touch
+              <i class="fas fa-envelope"></i>
+              Get In Touch
             </a>
           </div>
         </div>
@@ -73,7 +69,7 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
       <div class="section-header">
@@ -82,17 +78,23 @@
       </div>
       <div class="about-content">
         <div class="about-card">
-          <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="card-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
           <h3>My Journey</h3>
           <p>Currently pursuing Master of Computer Application (MCA) at GM University, building upon my strong foundation from my Bachelor of Computer Applications degree completed from Bapuji Institute of Hi-Tech Education in 2024.</p>
         </div>
         <div class="about-card">
-          <div class="card-icon"><i class="fas fa-code"></i></div>
+          <div class="card-icon">
+            <i class="fas fa-code"></i>
+          </div>
           <h3>What I Do</h3>
-          <p>I specialize in Python programming and enjoy creating applications that solve real-world problems.</p>
+          <p>I specialize in Python programming and enjoy creating applications that solve real-world problems. My passion lies in creating meaningful software that can make a real difference.</p>
         </div>
         <div class="about-card">
-          <div class="card-icon"><i class="fas fa-heart"></i></div>
+          <div class="card-icon">
+            <i class="fas fa-heart"></i>
+          </div>
           <h3>My Interests</h3>
           <ul class="interests-list">
             <li><i class="fas fa-check"></i> Python Development</li>
@@ -104,7 +106,7 @@
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- Skills Section -->
   <section id="skills" class="skills">
     <div class="container">
       <div class="section-header">
@@ -112,29 +114,41 @@
         <p class="section-subtitle">Technologies I work with</p>
       </div>
       <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+        <div class="skill-card" data-skill="html">
+          <div class="skill-icon">
+            <i class="fab fa-html5"></i>
+          </div>
           <h3>HTML & CSS</h3>
           <p>Front-end web development technologies</p>
-          <div class="skill-progress"><div class="progress-bar" data-width="85%"></div></div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-width="85%"></div>
+          </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+        <div class="skill-card" data-skill="js">
+          <div class="skill-icon">
+            <i class="fab fa-js-square"></i>
+          </div>
           <h3>JavaScript</h3>
           <p>Basics of JavaScript programming</p>
-          <div class="skill-progress"><div class="progress-bar" data-width="70%"></div></div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-width="70%"></div>
+          </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-python"></i></div>
+        <div class="skill-card" data-skill="python">
+          <div class="skill-icon">
+            <i class="fab fa-python"></i>
+          </div>
           <h3>Python</h3>
           <p>Advanced Python development and applications</p>
-          <div class="skill-progress"><div class="progress-bar" data-width="90%"></div></div>
+          <div class="skill-progress">
+            <div class="progress-bar" data-width="90%"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects Section -->
   <section id="projects" class="projects">
     <div class="container">
       <div class="section-header">
@@ -143,27 +157,59 @@
       </div>
       <div class="projects-grid">
         <div class="project-card">
-          <div class="project-image"><div class="project-bg project-bg-1"></div></div>
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-bg project-bg-1"></div>
+          </div>
           <div class="project-content">
             <h3>Voice Authentication System</h3>
-            <p>A secure voice authentication system built with Python.</p>
-            <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Voice Recognition</span></div>
+            <p>A secure voice authentication system built with Python. Uses voice recognition to identify users and provide secure access.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Voice Recognition</span>
+              <span class="tech-tag">Security</span>
+            </div>
           </div>
         </div>
 
         <div class="project-card">
-          <div class="project-image"><div class="project-bg project-bg-2"></div></div>
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-bg project-bg-2"></div>
+          </div>
           <div class="project-content">
             <h3>Heart Hemorrhage Detection</h3>
             <p>A Python-based healthcare application that helps detect heart hemorrhage conditions using data analysis techniques.</p>
-            <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Healthcare</span></div>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Healthcare</span>
+              <span class="tech-tag">Data Analysis</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact Section (title changed to "Contact") -->
   <section id="contact" class="contact">
     <div class="container">
       <div class="section-header">
@@ -172,7 +218,9 @@
       </div>
       <div class="contact-content">
         <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
           <h3>Email</h3>
           <p>reethushivkumarth@gmail.com</p>
           <a href="mailto:reethushivkumarth@gmail.com" class="contact-link">Send Message</a>
@@ -184,11 +232,10 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-center">© 2024 Reethu S. <span class="heart">❤</span> Made with <span class="heart">❤</span></p>
+      <p class="footer-center">© 2024 Reethu S. <span class="heart"></span>Made with <span class="heart">❤</span></p>
     </div>
   </footer>
 
-  <!-- local JS: exact lowercase filename -->
   <script src="script.js"></script>
 </body>
 </html>
