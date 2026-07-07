@@ -25,7 +25,7 @@ window.addEventListener("scroll", () => {
 
 // Simple fade-in animation when scrolling
 window.addEventListener("scroll", () => {
-  const elements = document.querySelectorAll(".project-card, .skill-card")
+  const elements = document.querySelectorAll(".project-card, .skill-card, .achievement-card")
   elements.forEach((element) => {
     const elementTop = element.getBoundingClientRect().top
     const elementVisible = 150
@@ -38,7 +38,7 @@ window.addEventListener("scroll", () => {
 
 // Set initial styles for animation
 document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".project-card, .skill-card")
+  const elements = document.querySelectorAll(".project-card, .skill-card, .achievement-card")
   elements.forEach((element) => {
     element.style.opacity = "0"
     element.style.transform = "translateY(20px)"
@@ -112,7 +112,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener("DOMContentLoaded", () => {
-  const animateElements = document.querySelectorAll(".about-card, .skill-card, .project-card, .contact-card")
+  const animateElements = document.querySelectorAll(".about-card, .skill-card, .project-card, .contact-card, .achievement-card")
   animateElements.forEach((el) => {
     el.classList.add("fade-in")
     observer.observe(el)
@@ -172,4 +172,20 @@ document.addEventListener("DOMContentLoaded", () => {
       typeWriter(titleName, originalText, 150)
     }, 1000)
   }
+})
+
+// Add smooth transitions to skill progress bars
+window.addEventListener("scroll", () => {
+  const skillCards = document.querySelectorAll(".skill-card.animate")
+  skillCards.forEach((card) => {
+    const progressBars = card.querySelectorAll(".progress-bar")
+    progressBars.forEach((bar) => {
+      const width = bar.getAttribute("data-width")
+      if (width && bar.style.width === "") {
+        setTimeout(() => {
+          bar.style.width = width
+        }, 100)
+      }
+    })
+  })
 })
