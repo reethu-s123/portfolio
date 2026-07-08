@@ -9,6 +9,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2"></div>
+    <div class="bubble bubble-3"></div>
+    <div class="bubble bubble-4"></div>
+    <div class="bubble bubble-5"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
@@ -34,30 +48,45 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    
     <div class="hero-content">
       <div class="hero-text">
-        <h1 class="hero-title">Hi, I'm <span class="highlight">Reethu S</span></h1>
+        <h1 class="hero-title">
+          Hi, I'm <span class="highlight animate-text">Reethu S</span>
+        </h1>
         <p class="hero-subtitle">ServiceNow Developer & Software Developer</p>
-        <p class="hero-description">
+        <p class="hero-description fade-in-up">
           Passionate MCA student specializing in ServiceNow development, Python programming, and AI/ML. 
           I build intelligent solutions for ITSM automation and solve real-world problems through code.
         </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View My Projects</a>
-          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        <div class="hero-buttons fade-in-up">
+          <a href="#projects" class="btn btn-primary bounce-hover">View My Projects</a>
+          <a href="#contact" class="btn btn-secondary bounce-hover">Contact Me</a>
         </div>
         <div class="social-links">
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link" title="LinkedIn">
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link pop-in" title="LinkedIn">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="https://github.com/yourprofile" target="_blank" class="social-link" title="GitHub">
+          <a href="https://github.com/yourprofile" target="_blank" class="social-link pop-in" title="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="mailto:reethushivkumarth@gmail.com" class="social-link" title="Email">
+          <a href="mailto:reethushivkumarth@gmail.com" class="social-link pop-in" title="Email">
             <i class="fas fa-envelope"></i>
           </a>
         </div>
       </div>
+    </div>
+
+    <!-- Scroll Down Arrow -->
+    <div class="scroll-down">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </section>
 
@@ -65,11 +94,11 @@
   <section id="about" class="about">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title slide-in">About Me</h2>
         <div class="title-underline"></div>
       </div>
       <div class="about-content">
-        <div class="about-card">
+        <div class="about-card slide-in-left">
           <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
           <h3>Education</h3>
           <p><strong>Master of Computer Applications (MCA)</strong></p>
@@ -77,7 +106,7 @@
           <p><strong>Bachelor of Computer Applications (BCA)</strong></p>
           <p>Bapuji Institute of Hi-Tech Education (Jun 2021 – Aug 2024)</p>
         </div>
-        <div class="about-card">
+        <div class="about-card slide-in-up">
           <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
           <h3>Specialization</h3>
           <p>✓ ServiceNow ITSM Development</p>
@@ -85,7 +114,7 @@
           <p>✓ Web Development & Automation</p>
           <p>✓ Software Development</p>
         </div>
-        <div class="about-card">
+        <div class="about-card slide-in-right">
           <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
           <h3>What Drives Me</h3>
           <p>I'm passionate about creating intelligent solutions that solve real problems. I love automation, learning new technologies, and contributing to organizational success.</p>
@@ -99,50 +128,50 @@
   <section id="skills" class="skills">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Technical Skills</h2>
+        <h2 class="section-title slide-in">Technical Skills</h2>
         <div class="title-underline"></div>
       </div>
 
       <!-- ServiceNow Skills -->
-      <div class="skill-category">
+      <div class="skill-category slide-in-up">
         <h3 class="category-title"><i class="fas fa-cogs"></i> ServiceNow & ITSM</h3>
         <div class="skills-grid">
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Incident Management</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 85%"></div>
             </div>
             <span class="skill-percent">85%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Business Rules & Scripts</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 80%"></div>
             </div>
             <span class="skill-percent">80%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Flow Designer</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 75%"></div>
             </div>
             <span class="skill-percent">75%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Service Catalog</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 80%"></div>
             </div>
             <span class="skill-percent">80%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">ACLs & Security</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 78%"></div>
             </div>
             <span class="skill-percent">78%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Tables & Forms</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 82%"></div>
@@ -153,45 +182,45 @@
       </div>
 
       <!-- Programming Skills -->
-      <div class="skill-category">
+      <div class="skill-category slide-in-up">
         <h3 class="category-title"><i class="fas fa-terminal"></i> Programming Languages</h3>
         <div class="skills-grid">
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Python</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 90%"></div>
             </div>
             <span class="skill-percent">90%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Java</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 75%"></div>
             </div>
             <span class="skill-percent">75%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">JavaScript</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 70%"></div>
             </div>
             <span class="skill-percent">70%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">MySQL</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 80%"></div>
             </div>
             <span class="skill-percent">80%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">HTML & CSS</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 85%"></div>
             </div>
             <span class="skill-percent">85%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Flask</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 80%"></div>
@@ -202,45 +231,45 @@
       </div>
 
       <!-- AI/ML Skills -->
-      <div class="skill-category">
+      <div class="skill-category slide-in-up">
         <h3 class="category-title"><i class="fas fa-brain"></i> AI/ML & Frameworks</h3>
         <div class="skills-grid">
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Deep Learning (PyTorch)</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 78%"></div>
             </div>
             <span class="skill-percent">78%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Computer Vision (OpenCV)</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 75%"></div>
             </div>
             <span class="skill-percent">75%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Machine Learning</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 80%"></div>
             </div>
             <span class="skill-percent">80%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">Data Analysis</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 75%"></div>
             </div>
             <span class="skill-percent">75%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">NLP</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 70%"></div>
             </div>
             <span class="skill-percent">70%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">GitHub & Version Control</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 85%"></div>
@@ -251,31 +280,31 @@
       </div>
 
       <!-- Tools & Platforms -->
-      <div class="skill-category">
+      <div class="skill-category slide-in-up">
         <h3 class="category-title"><i class="fas fa-tools"></i> Tools & Platforms</h3>
         <div class="skills-grid">
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">ServiceNow Platform</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 85%"></div>
             </div>
             <span class="skill-percent">85%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">VS Code</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 90%"></div>
             </div>
             <span class="skill-percent">90%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">PyCharm</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 85%"></div>
             </div>
             <span class="skill-percent">85%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item pulse-on-hover">
             <div class="skill-name">GitHub</div>
             <div class="skill-bar">
               <div class="skill-progress" style="width: 85%"></div>
@@ -291,12 +320,12 @@
   <section id="projects" class="projects">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title slide-in">My Projects</h2>
         <div class="title-underline"></div>
       </div>
       <div class="projects-grid">
         <!-- Project 1 -->
-        <div class="project-card">
+        <div class="project-card flip-in">
           <div class="project-header">
             <i class="fas fa-leaf"></i>
             <h3>Deep Learning-Based Weed Detection</h3>
@@ -306,12 +335,12 @@
             Developed a Flask web application for real-time crop image analysis with Grad-CAM explainability and role-based access control.
           </p>
           <div class="project-tech">
-            <span>Python</span>
-            <span>PyTorch</span>
-            <span>ResNet-18</span>
-            <span>Flask</span>
-            <span>OpenCV</span>
-            <span>MySQL</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">ResNet-18</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">MySQL</span>
           </div>
           <div class="project-links">
             <a href="#" target="_blank" class="project-link">
@@ -324,7 +353,7 @@
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card">
+        <div class="project-card flip-in">
           <div class="project-header">
             <i class="fas fa-microphone"></i>
             <h3>Voice Authentication System</h3>
@@ -334,11 +363,11 @@
             models for speaker verification. Implemented audio recording, feature extraction, training, and authentication modules.
           </p>
           <div class="project-tech">
-            <span>Python</span>
-            <span>Librosa</span>
-            <span>Machine Learning</span>
-            <span>NumPy</span>
-            <span>Signal Processing</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Librosa</span>
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">NumPy</span>
+            <span class="tech-tag">Signal Processing</span>
           </div>
           <div class="project-links">
             <a href="#" target="_blank" class="project-link">
@@ -351,7 +380,7 @@
         </div>
 
         <!-- Project 3 -->
-        <div class="project-card">
+        <div class="project-card flip-in">
           <div class="project-header">
             <i class="fas fa-brain"></i>
             <h3>Mental Health Detection System</h3>
@@ -361,10 +390,10 @@
             Uses machine learning algorithms for classification and provides insights for early intervention and support.
           </p>
           <div class="project-tech">
-            <span>Python</span>
-            <span>NLP</span>
-            <span>Machine Learning</span>
-            <span>Data Analysis</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Data Analysis</span>
           </div>
           <div class="project-links">
             <a href="#" target="_blank" class="project-link">
@@ -377,7 +406,7 @@
         </div>
 
         <!-- Project 4 -->
-        <div class="project-card">
+        <div class="project-card flip-in">
           <div class="project-header">
             <i class="fas fa-heartbeat"></i>
             <h3>Heart Hemorrhage Detection</h3>
@@ -387,10 +416,10 @@
             Provides medical professionals with analytical insights for better patient diagnosis.
           </p>
           <div class="project-tech">
-            <span>Python</span>
-            <span>Healthcare Tech</span>
-            <span>Data Analysis</span>
-            <span>Machine Learning</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Healthcare Tech</span>
+            <span class="tech-tag">Data Analysis</span>
+            <span class="tech-tag">Machine Learning</span>
           </div>
           <div class="project-links">
             <a href="#" target="_blank" class="project-link">
@@ -409,29 +438,29 @@
   <section id="achievements" class="achievements">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Achievements & Recognitions</h2>
+        <h2 class="section-title slide-in">Achievements & Recognitions</h2>
         <div class="title-underline"></div>
       </div>
       <div class="achievements-grid">
-        <div class="achievement-card">
+        <div class="achievement-card bounce-in">
           <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
           <h3>Google Cloud Agentic AI Day</h3>
           <p class="achievement-date">Powered by Hack2skill</p>
           <p>Participated in Google Cloud Agentic AI Day, exploring Agentic AI concepts and contributing innovative ideas for real-world problem-solving.</p>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card bounce-in">
           <div class="achievement-icon"><i class="fas fa-medal"></i></div>
           <h3>Agamya Cyber Tech Hackathon</h3>
           <p class="achievement-date">Competitive Environment</p>
           <p>Demonstrated problem-solving, teamwork, and technical skills in a competitive environment while building innovative solutions.</p>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card bounce-in">
           <div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div>
           <h3>Technical Workshops</h3>
           <p class="achievement-date">Continuous Learning</p>
           <p>Actively participated in technical workshops, hackathons, and AI-focused learning events to enhance practical knowledge and problem-solving skills.</p>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card bounce-in">
           <div class="achievement-icon"><i class="fas fa-star"></i></div>
           <h3>Quick Learner</h3>
           <p class="achievement-date">Professional Strength</p>
@@ -445,23 +474,23 @@
   <section id="contact" class="contact">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title slide-in">Get In Touch</h2>
         <div class="title-underline"></div>
       </div>
       <div class="contact-grid">
-        <div class="contact-card">
+        <div class="contact-card slide-in-left">
           <div class="contact-icon"><i class="fas fa-envelope"></i></div>
           <h3>Email</h3>
           <p>reethushivkumarth@gmail.com</p>
           <a href="mailto:reethushivkumarth@gmail.com" class="contact-btn">Send Email</a>
         </div>
-        <div class="contact-card">
+        <div class="contact-card slide-in-up">
           <div class="contact-icon"><i class="fas fa-phone"></i></div>
           <h3>Phone</h3>
           <p>+91 7348953941</p>
           <a href="tel:+917348953941" class="contact-btn">Call Me</a>
         </div>
-        <div class="contact-card">
+        <div class="contact-card slide-in-right">
           <div class="contact-icon"><i class="fas fa-file-pdf"></i></div>
           <h3>Resume</h3>
           <p>Download My CV</p>
@@ -476,9 +505,9 @@
     <div class="container">
       <p>&copy; 2025 Reethu S. All rights reserved. Built with passion and code.</p>
       <div class="footer-social">
-        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:reethushivkumarth@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="footer-social-link"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yourprofile" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
+        <a href="mailto:reethushivkumarth@gmail.com" class="footer-social-link"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </footer>
