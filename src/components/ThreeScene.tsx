@@ -4,6 +4,8 @@ import { OrbitControls, MeshWobbleMaterial, Html } from '@react-three/drei'
 import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 
+import ModelLoader from './ModelLoader'
+
 function FloatingMesh(){
   const ref = useRef<any>()
   useFrame((state, delta) => {
@@ -22,20 +24,38 @@ function FloatingMesh(){
 
 export default function ThreeScene(){
   const [isMobile, setIsMobile] = useState(false)
+  const [hasModel, setHasModel] = useState(false)
+
   useEffect(() => {
     setIsMobile(window.innerWidth < 720)
     const onResize = () => setIsMobile(window.innerWidth < 720)
     window.addEventListener('resize', onResize)
-    return () => window.removeEventListener('resize', onResize)
+
+    // Check if a local model exists at /assets/model.glb
+    let cancelled = false
+    fetch('/assets/model.glb', { method: 'HEAD' })
+      .then(res => {
+        if(cancelled) return
+        setHasModel(res.ok)
+      })
+      .catch(() => {
+        if(cancelled) return
+        setHasModel(false)
+      })
+
+    return () => {
+      cancelled = true
+      window.removeEventListener('resize', onResize)
+    }
   }, [])
 
   return (
     <div style={{ width: '100%', height: '100%', minHeight: 320 }}>
-      <Canvas shadows dpr={Math.min(2, window.devicePixelRatio)} camera={{ position: [0, 0, 5], fov: 50 }}>
+      <Canvas shadows dpr={Math.min(2, typeof window !== 'undefined' ? window.devicePixelRatio : 1)} camera={{ position: [0, 0, 5], fov: 50 }}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={0.8} castShadow />
         <Suspense fallback={<Html>Loading 3D...</Html>}>
-          <FloatingMesh />
+          {hasModel ? <ModelLoader src={'/assets/model.glb'} /> : <FloatingMesh />}
         </Suspense>
         {!isMobile && <OrbitControls enablePan={false} enableZoom={false} />}
       </Canvas>

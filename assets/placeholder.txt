@@ -1,0 +1,3 @@
+PLACEHOLDER
+
+Replace this file with your GLB/GLTF model named `model.glb` or `model.gltf` in this directory.
