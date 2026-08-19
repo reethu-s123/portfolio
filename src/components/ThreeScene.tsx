@@ -6,6 +6,7 @@ import { useFrame } from '@react-three/fiber'
 
 import ModelLoader from './ModelLoader'
 import InteractiveHead from './InteractiveHead'
+import AvatarPlane from './AvatarPlane'
 
 function FloatingMesh(){
   const ref = useRef<any>()
@@ -26,6 +27,7 @@ function FloatingMesh(){
 export default function ThreeScene(){
   const [isMobile, setIsMobile] = useState(false)
   const [hasModel, setHasModel] = useState(false)
+  const [hasAvatar, setHasAvatar] = useState(false)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -36,17 +38,17 @@ export default function ThreeScene(){
     const onResize = () => setIsMobile(window.innerWidth < 720)
     window.addEventListener('resize', onResize)
 
-    // Check if a local model exists at /assets/model.glb
+    // Check if a local model exists at /assets/model.glb and avatar at /assets/avatar.png
     let cancelled = false
-    fetch('/assets/model.glb', { method: 'HEAD' })
-      .then(res => {
-        if(cancelled) return
-        setHasModel(res.ok)
-      })
-      .catch(() => {
-        if(cancelled) return
-        setHasModel(false)
-      })
+    Promise.all([
+      fetch('/assets/model.glb', { method: 'HEAD' }).catch(() => ({ ok: false })),
+      fetch('/assets/avatar.png', { method: 'HEAD' }).catch(() => ({ ok: false }))
+    ])
+    .then(([m, a]) => {
+      if(cancelled) return
+      setHasModel(m && (m as any).ok)
+      setHasAvatar(a && (a as any).ok)
+    })
 
     return () => {
       cancelled = true
@@ -73,16 +75,21 @@ export default function ThreeScene(){
         <Suspense fallback={<Html center>Loading 3D...</Html>}>
           {/* Debug overlay inside canvas to show status in production if needed */}
           <Html center style={{pointerEvents:'none'}}>
-            <div style={{background:'rgba(0,0,0,0.4)',padding:'6px 10px',borderRadius:6,fontSize:12,color:'#cbd5e1'}}>3D: {hasModel ? 'model' : 'procedural'}</div>
+            <div style={{background:'rgba(0,0,0,0.4)',padding:'6px 10px',borderRadius:6,fontSize:12,color:'#cbd5e1'}}>3D: {hasModel ? 'model' : hasAvatar ? 'avatar' : 'procedural'}</div>
           </Html>
 
           {hasModel ? (
             <ModelLoader src={'/assets/model.glb'} />
+          ) : hasAvatar ? (
+            <>
+              <FloatingMesh />
+              <AvatarPlane src={'/assets/avatar.png'} position={[1.4, -0.1, 0]} scale={1.0} />
+            </>
           ) : (
             <>
               {/* decorative floating mesh behind the head for visual interest */}
               <FloatingMesh />
-              {/* interactive head positioned slightly right */}
+              {/* interactive procedural head positioned slightly right */}
               <InteractiveHead position={[1.4, -0.1, 0]} scale={1.0} />
             </>
           )}
