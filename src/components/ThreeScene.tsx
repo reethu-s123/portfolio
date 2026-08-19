@@ -18,7 +18,7 @@ function FloatingMesh(){
   return (
     <mesh ref={ref} castShadow position={[0,0,0]}>
       <icosahedronGeometry args={[1.2, 3]} />
-      <MeshWobbleMaterial factor={0.6} speed={1.2} color="#00d9ff" emissive="#001a26"/>
+      <MeshWobbleMaterial factor={0.6} speed={1.2} color="#2dd4bf" emissive="#022b35"/>
     </mesh>
   )
 }
@@ -51,18 +51,18 @@ export default function ThreeScene(){
   }, [])
 
   return (
-    <div style={{ width: '100%', height: '100%', minHeight: 320 }}>
+    <div className="three-canvas">
       <Canvas shadows dpr={Math.min(2, typeof window !== 'undefined' ? window.devicePixelRatio : 1)} camera={{ position: [0, 0, 5], fov: 50 }}>
         <ambientLight intensity={0.8} />
         <directionalLight position={[5, 5, 5]} intensity={0.8} castShadow />
-        <Suspense fallback={<Html>Loading 3D...</Html>}>
+        <Suspense fallback={<Html center>Loading 3D...</Html>}>
           {hasModel ? (
             <ModelLoader src={'/assets/model.glb'} />
           ) : (
             <>
-              {/* Keep a decorative floating mesh behind the head for visual interest */}
+              {/* decorative floating mesh behind the head for visual interest */}
               <FloatingMesh />
-              {/* Interactive head on the right side of the 3D scene */}
+              {/* interactive head positioned slightly right */}
               <InteractiveHead position={[1.4, -0.1, 0]} scale={1.0} />
             </>
           )}
