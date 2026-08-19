@@ -1,0 +1,17 @@
+PLACEHOLDER FOR 3D MODEL
+
+This file is a placeholder so the /assets path exists in production.
+
+To use a real model, replace this file with a binary GLB or GLTF named exactly:
+  public/assets/model.glb
+
+Recommended steps to add your model locally:
+  mkdir -p public/assets
+  # copy your model into public/assets as model.glb
+  git add public/assets/model.glb
+  git commit -m "chore: add 3D model for hero" 
+  git push origin migration/react-three
+
+Notes:
+- Vite serves files from public/ at the site root, so a file at public/assets/model.glb will be reachable at /assets/model.glb in production.
+- Keep models small (~1-2MB) or use Draco compression for better mobile performance.
