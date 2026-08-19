@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 
 import ModelLoader from './ModelLoader'
+import InteractiveHead from './InteractiveHead'
 
 function FloatingMesh(){
   const ref = useRef<any>()
@@ -52,10 +53,19 @@ export default function ThreeScene(){
   return (
     <div style={{ width: '100%', height: '100%', minHeight: 320 }}>
       <Canvas shadows dpr={Math.min(2, typeof window !== 'undefined' ? window.devicePixelRatio : 1)} camera={{ position: [0, 0, 5], fov: 50 }}>
-        <ambientLight intensity={0.6} />
+        <ambientLight intensity={0.8} />
         <directionalLight position={[5, 5, 5]} intensity={0.8} castShadow />
         <Suspense fallback={<Html>Loading 3D...</Html>}>
-          {hasModel ? <ModelLoader src={'/assets/model.glb'} /> : <FloatingMesh />}
+          {hasModel ? (
+            <ModelLoader src={'/assets/model.glb'} />
+          ) : (
+            <>
+              {/* Keep a decorative floating mesh behind the head for visual interest */}
+              <FloatingMesh />
+              {/* Interactive head on the right side of the 3D scene */}
+              <InteractiveHead position={[1.4, -0.1, 0]} scale={1.0} />
+            </>
+          )}
         </Suspense>
         {!isMobile && <OrbitControls enablePan={false} enableZoom={false} />}
       </Canvas>
