@@ -26,8 +26,12 @@ function FloatingMesh(){
 export default function ThreeScene(){
   const [isMobile, setIsMobile] = useState(false)
   const [hasModel, setHasModel] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    // Only render <Canvas> on the client to avoid hydration/SSR issues
+    setMounted(true)
+
     setIsMobile(window.innerWidth < 720)
     const onResize = () => setIsMobile(window.innerWidth < 720)
     window.addEventListener('resize', onResize)
@@ -50,12 +54,28 @@ export default function ThreeScene(){
     }
   }, [])
 
+  // If not mounted yet, render a visible placeholder so the layout reserves space
+  if (!mounted) {
+    return (
+      <div className="three-canvas" style={{minHeight: 420}}>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'center',height:'100%',color:'#94a3b8'}}>
+          Loading interactive hero...
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className="three-canvas">
+    <div className="three-canvas" role="img" aria-label="Interactive avatar">
       <Canvas shadows dpr={Math.min(2, typeof window !== 'undefined' ? window.devicePixelRatio : 1)} camera={{ position: [0, 0, 5], fov: 50 }}>
         <ambientLight intensity={0.8} />
         <directionalLight position={[5, 5, 5]} intensity={0.8} castShadow />
         <Suspense fallback={<Html center>Loading 3D...</Html>}>
+          {/* Debug overlay inside canvas to show status in production if needed */}
+          <Html center style={{pointerEvents:'none'}}>
+            <div style={{background:'rgba(0,0,0,0.4)',padding:'6px 10px',borderRadius:6,fontSize:12,color:'#cbd5e1'}}>3D: {hasModel ? 'model' : 'procedural'}</div>
+          </Html>
+
           {hasModel ? (
             <ModelLoader src={'/assets/model.glb'} />
           ) : (
