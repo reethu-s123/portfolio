@@ -48,6 +48,14 @@ export default function ThreeScene(){
       if(cancelled) return
       setHasModel(m && (m as any).ok)
       setHasAvatar(a && (a as any).ok)
+
+      // As a fallback, proactively attempt to load the avatar image (some CDNs block HEAD)
+      if(!(a && (a as any).ok)){
+        const img = new Image()
+        img.src = '/assets/avatar.png'
+        img.onload = () => { if(!cancelled) setHasAvatar(true) }
+        img.onerror = () => { /* ignore */ }
+      }
     })
 
     return () => {
