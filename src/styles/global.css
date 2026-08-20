@@ -1,0 +1,55 @@
+/* Professional global styles for migrated React app
+   Updated palette to subtle professional blues/teal and layout fixes to ensure Canvas renders visibly.
+*/
+:root{
+  --bg-primary:#071028; /* deep navy */
+  --bg-secondary:#0b1630;
+  --accent:#2dd4bf; /* teal */
+  --accent-2:#6366f1; /* indigo */
+  --muted:#94a3b8;
+  --text-primary:#e6eef8;
+  --panel: rgba(14,24,42,0.6);
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;font-family:'Montserrat',sans-serif;background:var(--bg-primary);color:var(--text-primary);}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Navigation */
+.navbar{position:fixed;top:0;width:100%;background:rgba(6,12,28,0.75);backdrop-filter:blur(6px);z-index:1000}
+.nav-container{display:flex;justify-content:space-between;align-items:center;height:70px}
+.nav-menu{display:flex;list-style:none;gap:2rem}
+.nav-link{color:var(--muted);text-decoration:none}
+.nav-link.active, .nav-link:hover{color:var(--accent);}
+
+/* HERO */
+.hero{min-height:82vh;display:flex;align-items:center;justify-content:center;padding:120px 0;z-index:10;position:relative}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;width:100%;max-width:1200px}
+.hero-title{font-size:3rem;margin:0;color:var(--text-primary)}
+.hero-subtitle{color:var(--accent-2);letter-spacing:1px}
+.hero-description{color:var(--muted);max-width:560px}
+.hero-buttons{display:flex;gap:1rem;margin-top:1rem}
+.btn{padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{color:var(--accent);border:2px solid rgba(45,212,191,0.14);background:transparent}
+.btn-secondary{color:var(--accent-2);border:2px solid rgba(99,102,241,0.12);background:transparent}
+
+/* Three.js container */
+.hero-visual{position:relative;height:520px;display:flex;align-items:center;justify-content:center}
+.three-canvas{width:100%;height:100%;min-height:420px;position:relative}
+.three-canvas canvas{width:100% !important;height:100% !important;display:block}
+
+/* subtle background grid */
+.animated-grid{position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);background-size:60px 60px;opacity:0.06;pointer-events:none;z-index:0}
+
+/* sections */
+.about, .projects, .contact{padding:80px 0}
+.section-title{font-family:'Space Mono',monospace;color:var(--text-primary)}
+.project-card{padding:1.5rem;border-radius:8px;background:var(--panel)}
+.footer{padding:40px 0;text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero-content{grid-template-columns:1fr}
+  .nav-menu{display:none}
+  .hero-visual{height:360px}
+}
