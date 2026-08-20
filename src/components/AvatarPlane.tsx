@@ -17,12 +17,12 @@ export default function AvatarPlane({ src = '/assets/avatar.png', position = [1.
   const { mouse, size } = useThree()
 
   // approximate eye positions on the plane in plane local space
-  // These were tuned to the provided image — you can tweak if necessary
-  const leftEyeBase = useMemo(() => ({ x: -0.23, y: 0.08, z: 0.02 }), [])
-  const rightEyeBase = useMemo(() => ({ x: 0.23, y: 0.08, z: 0.02 }), [])
+  // Tuned values; adjusted slightly for better alignment
+  const leftEyeBase = useMemo(() => ({ x: -0.20, y: 0.10, z: 0.02 }), [])
+  const rightEyeBase = useMemo(() => ({ x: 0.20, y: 0.10, z: 0.02 }), [])
 
-  // range of pupil travel in plane units
-  const range = 0.06
+  // range of pupil travel in plane units (increased slightly)
+  const range = 0.08
 
   useFrame(() => {
     // mouse.x / mouse.y are -1..1; convert to small offset
